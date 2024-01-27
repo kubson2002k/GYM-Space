@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie</title>
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                 <a href="">GYM <span>Space</span></a>
+            </div>
+            <a href="javascript:void(0)" class="ham-burger">
+              <span></span>    
+              <span></span>
+            </a>
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">O nas</a></li>
+                    <li><a href="index.html#service">Usługi</a></li>
+                    <li><a href="index.html#classes">Zajęcia</a></li>
+                    <li><a href="index.html#schedule">Harmonogram</a></li>
+                    <li><a href="index.html#price">Cennik</a></li>
+                    <li><a href="index.html#contact">Kontakt</a></li>
+                    <li><a href="#" id="login" class="login-btn">Zaloguj</a></li>
+                </ul>
+            </div>
+        </div>
+   </header>
+   <div class="login-container">
+       <h2>Zaloguj się</h2>
+       <form action="login.php" method="post"></form>
+           <div class="input-group">
+               <label for="username">Login</label>
+               <input type="text" id="username" name="username" required>
+           </div>
+           <div class="input-group">
+               <label for="password">Hasło</label>
+               <input type="password" id="password" name="password" required>
+           </div>
+           <button class="btn" onclick="redirectToIndex()">Zaloguj</button>
+           <div class="social-buttons">
+                <div class="social-button facebook">
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img src="images/facebook_logo.png" alt="Facebook Logo">
+                        Facebook
+                    </a>
+                </div>
+                <div class="social-button google">
+                    <a href="https://www.google.com/" target="_blank">
+                        <img src="images/google_logo.png" alt="Google Logo">
+                        Google
+                    </a>
+                </div>
+                <div class="social-button apple">
+                    <a href="https://www.apple.com/" target="_blank">
+                        <img src="images/apple_logo.png" alt="Apple Logo">
+                        Apple
+                    </a>
+                </div>
+            </div>
+        </form>
+   </div>
+   
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".ham-burger, .nav ul li a").click(function(){
+                $(".nav").toggleClass("open");
+                $(".ham-burger").toggleClass("active");
+            });
+        });
+    </script>
+    <script>
+        function redirectToIndex() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

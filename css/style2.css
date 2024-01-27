@@ -1,0 +1,272 @@
+body{
+	margin:0;
+	padding:0;
+	overflow-x: hidden;
+    background-image: url('../images/home.jpg'); 
+    background-size: cover;
+    background-position: center; 
+    background-attachment: fixed; 
+}
+
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+	font-family: 'Oswald', sans-serif;
+}
+
+
+header{
+	position:fixed;
+	left: 0px;
+	top:0px;
+	width: 100%;
+	z-index: 10;
+	background-color: #000000;
+	padding:15px 15px;
+}
+header .container{
+	-webkit-display: flex;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header .logo a{
+	font-size: 30px;
+	text-decoration: none;
+	color:#ffffff;
+	font-weight: 700;
+}
+header .logo a span{
+	color:hwb(207 4% 7%);
+}
+header .nav{
+	position: fixed;
+	background-color: hwb(207 4% 7%);
+	width: 280px;
+	top:0;
+	right:0;
+	height: 100%;
+	z-index: 99;
+	padding:100px 0px 15px; 
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+	-webkit-transition: transform .5s ease;
+    transition: transform .5s ease;
+}
+header .nav.open{
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+header .nav ul{
+	list-style: none;
+	margin:0;
+	padding:0px;
+}
+header .nav ul li{
+display: block;
+}
+header .nav ul li a{
+	text-decoration: none;
+	font-size: 30px;
+	font-weight: 400;
+    color:#ffffff;
+    display: block;
+    position: relative;
+    padding:10px 30px;
+}
+header .nav ul li a.active::before{
+	content: '';
+	position: absolute;
+	left:0px;
+	top:0px;
+	height: 100%;
+	width:100%;
+	background-color:#000000;
+	opacity:.2;
+	-webkit-transition: width .5s ease;
+	transition: width .5s ease;
+	z-index: -1;
+}
+header .nav ul li a::before{
+	content: '';
+	position: absolute;
+	left:0px;
+	top:0px;
+	height: 100%;
+	width:0px;
+	background-color:#000000;
+	opacity:.2;
+	-webkit-transition: width .5s ease;
+	transition: width .5s ease;
+	z-index: -1;
+}
+header .nav ul li a:hover::before{
+	width: 100%;
+}
+.nav ul li .login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.nav ul li .login-btn a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav ul li .login-btn a:hover {
+    background-color: #333;
+    color: white;
+}
+header .ham-burger{
+	display: inline-block;
+	position: relative;
+	z-index: 100;
+}
+header .ham-burger span{
+	height: 3px;
+	margin-bottom:8px;
+	display: block;
+	background-color:#ffffff;
+	width:30px;
+	-webkit-transition: transform .5s ease;
+	transition: transform .5s ease;
+}
+header .ham-burger span:nth-child(1){
+	transform-origin: left top;
+}
+header .ham-burger span:nth-child(2){
+	transform-origin: left bottom;
+}
+
+header .ham-burger.active span:nth-child(1){
+	-webkit-transform: rotate(45deg) translateY(-6px);
+	transform: rotate(45deg) translateY(-6px);
+}
+header .ham-burger.active span:nth-child(2){
+	-webkit-transform: rotate(-45deg) translateY(6px);
+	transform: rotate(-45deg) translateY(6px)
+}
+
+.container{
+	max-width: 1170px;
+	margin: auto;
+}
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; 
+    padding: 20px; 
+    background-color: #f9f9f9; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.login-container h2 {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column; 
+}
+
+.login-container .input-group {
+    margin-bottom: 20px; 
+}
+
+.login-container label {
+    font-size: 18px; 
+    margin-bottom: 8px; 
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%; 
+    padding: 10px; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+}
+
+.login-container button.btn {
+    width: 100%; 
+    padding: 10px; 
+    font-size: 18px; 
+    border-radius: 5px; 
+    border: none; 
+    background-color: #333; 
+    color: #fff; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.login-container button.btn:hover {
+    background-color: #555; 
+}
+.social-button {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px; 
+}
+
+.social-button a {
+    display: block;
+    padding: 10px 0;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%; 
+}
+
+.social-button img {
+    width: 30px;
+    height: 30px; 
+    margin-bottom: 5px;
+}
+.wow:first-child {
+	visibility: hidden;
+  }
+  .social-buttons {
+	  margin-top: 20px;
+	  display: flex;
+	  justify-content: space-between;
+  }
+  .social-button {
+	  width: 30%;
+	  text-align: center;
+  }
+  .social-button a {
+	  display: block;
+	  padding: 10px 0;
+	  border-radius: 5px;
+	  color: #fff;
+	  font-weight: bold;
+	  text-decoration: none;
+	  transition: background-color 0.3s, color 0.3s;
+  }
+  .social-button.facebook a {
+	  background-color: #1877f2;
+  }
+  .social-button.google a {
+	  background-color: #db4437;
+  }
+  .social-button.apple a {
+	  background-color: #000000;
+  }
+  .social-button img {
+	  width: 30px;
+	  margin-bottom: 5px;
+  }
